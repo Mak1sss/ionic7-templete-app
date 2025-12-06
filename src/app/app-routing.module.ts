@@ -33,6 +33,11 @@ import { GazonComponent } from './gazon/gazon.component';
 import { WaterTrackerComponent } from './water-tracker/water-tracker.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'front-layout',
+    pathMatch: 'full'
+  },  
 {
       path: 'game-2048',
     loadChildren: () => import('./g2048/g2048.module').then(m => m.G2048Module)
@@ -58,9 +63,8 @@ const routes: Routes = [
     component: ForgotPasswordComponent
   },
   {
-    path: '',
-    redirectTo: 'front-layout',
-    pathMatch: 'full'
+    path: 'calc',
+    loadChildren: () => import('./calc/calc.module').then(m => m.CalcModule)
   },
   {
     path:'maps',
